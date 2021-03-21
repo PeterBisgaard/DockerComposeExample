@@ -13,6 +13,7 @@ const users = [
 
 const router = (appObj) => {
     appObj.get("/users", (request, response) => {
+      console.log(`GET recived: ${request.url}`);
         response.send(users);
     });
 
@@ -23,6 +24,13 @@ const router = (appObj) => {
         response.send(users.find(el => {
             return el.id == id2find;
         }));
+    });
+
+    appObj.post("/users", (request, response) => {
+        console.log(request);
+        const newID = users.length+1
+        users.push({id: newID, name:request.body.name, email:request.body.email});
+        response.status(201).send(`User added with ID: ${newID}`);
     });
 
 
