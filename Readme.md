@@ -2,8 +2,6 @@
 
 This example demonstrate hvor to make a simple node application there connect to an exsisting prostgres docker container, where database i stored on host envireoment.
 
-### History
-20210321 Initial upload
 
 ## Used containers:
 
