@@ -33,6 +33,13 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=yourStrong(!)Password" -e "MSSQL_P
 
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=yourStrong(!)Password" -e "MSSQL_PID=Express" -p 1433:1433 -d mcr.microsoft.com/mssql/server
 
+### start with docker-compose
+docker-compose up -d
+
+Command inside container to open SQL prompt for verification
+/opt/mssql-tools/bin/sqlcmd -U sa -P "yourStrong(!)Password"
+
+
 ## Node installation
 npm init
 npm install body-parser express mssql request

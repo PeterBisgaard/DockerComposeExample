@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+
+  SQL:
+    container_name: sql-server-db
+    image: mcr.microsoft.com/mssql/server
+    # image: microsoft/mssql-server-linux:2017-latest
+    ports:
+    - 1433:1433
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "yourStrong(!)Password"
+      # SA_PASSWORD: "change_this_password"
+      MSSQL_PID: "Express"
+
+      
+      
